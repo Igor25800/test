@@ -1,0 +1,6 @@
+<button [ngClass]="'btn-' + color()" class="btn">
+  @if (img()) {
+    <img class="btn-img" [ngSrc]="img() || ''" height="18" width="18" alt="">
+  }
+  {{text()}}
+</button>

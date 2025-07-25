@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card__row">
+    <div class="card__label">{{text()}}</div>
+    <div class="card__value">
+      <div [style.font-size.px]="fontSize() || 22" class="exlipes">{{data()}}</div>
+      @if (imgPatch()) {
+        <img [ngSrc]="imgPatch() || ''" alt="" width="25" height="25">
+      } @else {
+        <div style="width: 25px; height: 25px"></div>
+      }
+    </div>
+  </div>
+</div>

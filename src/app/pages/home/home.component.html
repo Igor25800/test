@@ -1,0 +1,50 @@
+@let data = productSignal();
+<app-header/>
+<div class="product-card">
+  <div class="product-card__left">
+    @for (card of leftCards(); track card) {
+      <div class="product-card__card">
+        <app-card [fontSize]="card.fontSize" [text]="card.text" [data]="data?.[card.key]" [imgPatch]="card.imgPatch || ''"></app-card>
+      </div>
+    }
+  </div>
+  <hr class="product-card__divider">
+  <div class="product-card__right">
+    @for (card of rightCards(); track card) {
+      <div class="product-card__card">
+        <app-card [fontSize]="card.fontSize" [text]="card.text" [data]="data?.[card.key]" [imgPatch]="card.imgPatch || ''"></app-card>
+      </div>
+    }
+  </div>
+  <hr class="product-card__divider">
+  <div class="product-card__images">
+    <img priority ngSrc="assets/img/png/data-element-photo-information.png" alt="" width="233" height="266" class="product-card__image">
+    <img priority ngSrc="assets/img/png/data-element-photo.png" alt="" width="233" height="266" class="product-card__image">
+  </div>
+</div>
+
+<hr class="product-card__divider product-card__divider--bottom">
+<div class="product-list product-list--location">
+  <h3 class="product-list__title">List Location</h3>
+  <app-number-badge [count]="data?.location?.length" class="product-list__badge"></app-number-badge>
+</div>
+<app-table [header]="headerLocation()" [data]="data?.location"></app-table>
+
+<hr class="product-card__divider product-card__divider--spaced">
+<div class="product-list product-list--ebay">
+  <h3 class="product-list__title">List Ebay Vision Listings</h3>
+  <app-number-badge [count]="data?.ebay_listings?.length" class="product-list__badge"></app-number-badge>
+</div>
+<app-table [header]="headerEbayListings()" [data]="data?.ebay_listings"></app-table>
+
+<hr class="product-card__divider product-card__divider--spaced">
+<div class="product-list product-list--same-products">
+  <h3 class="product-list__title">Same Products</h3>
+  <app-number-badge [count]="data?.same_products?.length" class="product-list__badge"></app-number-badge>
+</div>
+<app-table [header]="headerSameProducts()" [data]="data?.same_products"></app-table>
+
+<div class="product-actions">
+  <app-button [text]="'Expand'" [color]="'white'" class="product-actions__button product-actions__button--expand"></app-button>
+  <app-button [text]="'Add'" [color]="'purple'" class="product-actions__button product-actions__button--add"></app-button>
+</div>

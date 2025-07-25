@@ -1,0 +1,125 @@
+@import "variable";
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 12px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  height: 55px;
+  border-bottom: 1px solid $purple-100;
+  margin-top: 14px;
+
+  &__title {
+    font-weight: bold;
+    font-family: Raleway, sans-serif;
+    margin-top: 6px;
+    margin-left: 30px;
+    font-size: 25px;
+    line-height: 100%;
+    letter-spacing: 0;
+    color: $purple-60;
+    text-decoration: none;
+    user-select: none;
+  }
+
+  &__controls {
+    display: flex;
+    gap: 8px;
+    height: 40px;
+  }
+
+  &__edit-button {
+    width: 90px;
+    height: 40px;
+    background-color: $purple-60;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Raleway, sans-serif;
+    font-weight: 700;
+    color: $white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 21px;
+    line-height: 100%;
+    letter-spacing: 0;
+
+    & .img {
+      margin-right: 8px;
+    }
+  }
+
+  &__divider {
+    width: 1px;
+    height: 40px;
+    background-color: $white-10;
+    border: none;
+    margin: 0 8px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+  }
+
+  &__arrow-group {
+    margin-right: 10px;
+  }
+
+  &__arrow {
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: $purple-60;
+    user-select: none;
+
+    &:hover {
+      color: $purple-80;
+    }
+
+    &--next {
+    }
+
+    &--prev {
+    }
+  }
+
+  &__expand {
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: $purple-60;
+    user-select: none;
+    margin-right: 10px;
+
+    &:hover {
+      color: $purple-80;
+    }
+  }
+
+  &__close {
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: $purple-60;
+    user-select: none;
+    margin-right: 10px;
+
+    &:hover {
+      color: $purple-80;
+    }
+  }
+}

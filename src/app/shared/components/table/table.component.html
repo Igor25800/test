@@ -1,0 +1,27 @@
+<div class="table">
+  <table class="table__content">
+    <thead class="table__header">
+    <tr class="table__row">
+      @for (column of header(); track column) {
+        <th class="table__header-cell" columnWidth [size]="column.size">{{ column.name | titlecase }}</th>
+      }
+    </tr>
+    </thead>
+    <tbody class="table__body">
+      @for (item of data(); track $index) {
+        <tr class="table__row">
+          @for (column of transformedData(); track column) {
+            <td class="table__cell">
+              <div class="table__cell-content">
+                <div class="table__cell-text">{{ (item[column]) || '-' }}</div>
+                @if (column?.toLowerCase()?.includes('notes') || column?.toLowerCase()?.includes('fk_edit_employee')) {
+                  <img class="table__cell-icon" ngSrc="../../../../assets/img/svg/more.svg" alt="" width="25" height="25">
+                }
+              </div>
+            </td>
+          }
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

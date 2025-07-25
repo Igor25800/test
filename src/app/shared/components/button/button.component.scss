@@ -1,0 +1,32 @@
+@import "variable";
+
+.btn {
+  width: 90px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Raleway, sans-serif;
+  font-weight: 700;
+  color: $white;
+  padding: 6px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 21px;
+  line-height: 100%;
+  letter-spacing: 0;
+  border: 1px solid $purple-50;
+
+  &-img {
+    margin-right: 8px;
+  }
+
+  &-purple {
+    background-color: $purple-60;
+  }
+
+  &-white {
+    background-color: $white;
+    color: $purple-60;
+  }
+}

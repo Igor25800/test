@@ -1,0 +1,21 @@
+@import "variable";
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 8px;
+  background-color: $white-10;
+
+  &-badge {
+    font-family: 'Raleway ', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: $gray-dark-100;
+    line-height: 100%;
+  }
+}
+
+
